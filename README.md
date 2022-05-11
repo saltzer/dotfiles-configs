@@ -12,6 +12,7 @@
 - xterm 
 - feh 
 - rxvt-unicode 
+- ttf-font-awesome
 - xrandr 
 - arandr 
 - volumeicon
