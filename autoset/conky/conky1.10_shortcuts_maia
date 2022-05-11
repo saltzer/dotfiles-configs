@@ -27,12 +27,12 @@ ${upspeedgraph wlo1 5,90} ↑
 ${downspeedgraph wlo1 5,90} ↓
 ${execi 60 wget -O - -q icanhazip.com}
 
-${tcp_portmon 1 65535 rip  1}
-${tcp_portmon 2 65535 rip  2}
-${tcp_portmon 3 65535 rip  3}
-${tcp_portmon 4 65535 rip  4}
-${tcp_portmon 5 65535 rip  5}
-${tcp_portmon 6 65535 rip  6}
+${tcp_portmon 1 65535 rip  1}:${tcp_portmon 1 65535 rport  1}
+${tcp_portmon 2 65535 rip  2}:${tcp_portmon 2 65535 rport  2}
+${tcp_portmon 3 65535 rip  3}:${tcp_portmon 3 65535 rport  3}
+${tcp_portmon 4 65535 rip  4}:${tcp_portmon 4 65535 rport  4}
+${tcp_portmon 5 65535 rip  5}:${tcp_portmon 5 65535 rport  5}
+${tcp_portmon 6 65535 rip  6}:${tcp_portmon 6 65535 rport  6}
 
 ${rss http://rss.slashdot.org/Slashdot/slashdot 30 item_title 0}
 ${rss http://rss.slashdot.org/Slashdot/slashdot 30 item_title 1}
