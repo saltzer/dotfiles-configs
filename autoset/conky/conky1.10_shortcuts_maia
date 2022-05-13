@@ -1,9 +1,9 @@
 conky.config = {
 	alignment = 'bottom_left',
 	background = true,
-	color2 = '5D7B86',
+	color2 = '#d2fcd9',
 	cpu_avg_samples = 2,
-	default_color = 'F9FAF9',
+	default_color = '#d2fcd9',
 	double_buffer = true,
 	font = 'Bitstream Vera Sans:size=8',
 	draw_shades = false,
@@ -12,27 +12,34 @@ conky.config = {
 	minimum_width = 200,
 	no_buffers = true,
 	own_window = true,
-	own_window_type = 'override',
 	own_window_transparent = true,
 	update_interval = 2.0,
 	use_xft = true,
+        own_window_type = 'override',
+        own_window_class = 'conky',
+        own_window_argb_visual = true,
+        draw_outline = false,
+        draw_borders = false,
+        draw_graph_borders = true,
 }
 conky.text = [[
 ${uptime}
+
 ${exec who}
 
-${battery_bar 5,90 BAT1} %
-${fs_bar 5,90 /}  /
-${upspeedgraph wlo1 5,90} ↑
-${downspeedgraph wlo1 5,90} ↓
+$color2${battery_bar 5,90 BAT1}$color %
+$color2${fs_bar 5,90 /}$color  /
+$color2${upspeedgraph eno1 5,90}$color ↑
+$color2${downspeedgraph eno1 5,90}$color ↓
+
 ${execi 60 wget -O - -q icanhazip.com}
 
-${tcp_portmon 1 65535 rip  1}:${tcp_portmon 1 65535 rport  1}
-${tcp_portmon 2 65535 rip  2}:${tcp_portmon 2 65535 rport  2}
-${tcp_portmon 3 65535 rip  3}:${tcp_portmon 3 65535 rport  3}
-${tcp_portmon 4 65535 rip  4}:${tcp_portmon 4 65535 rport  4}
-${tcp_portmon 5 65535 rip  5}:${tcp_portmon 5 65535 rport  5}
-${tcp_portmon 6 65535 rip  6}:${tcp_portmon 6 65535 rport  6}
+${tcp_portmon 1 65535 rip  1}$color2:${tcp_portmon 1 65535 rport  1}$color
+${tcp_portmon 2 65535 rip  2}$color2:${tcp_portmon 2 65535 rport  2}$color
+${tcp_portmon 3 65535 rip  3}$color2:${tcp_portmon 3 65535 rport  3}$color
+${tcp_portmon 4 65535 rip  4}$color2:${tcp_portmon 4 65535 rport  4}$color
+${tcp_portmon 5 65535 rip  5}$color2:${tcp_portmon 5 65535 rport  5}$color
+${tcp_portmon 6 65535 rip  6}$color2:${tcp_portmon 6 65535 rport  6}$color
 
 ${rss http://rss.slashdot.org/Slashdot/slashdot 30 item_title 0}
 ${rss http://rss.slashdot.org/Slashdot/slashdot 30 item_title 1}

@@ -44,7 +44,7 @@ do
 
         naughty.notify {
             preset = naughty.config.presets.critical,
-            title = "Oops, an error happened!",
+            title = "FUCK, an error happened!",
             text = tostring(err)
         }
 
@@ -80,7 +80,16 @@ awful.spawn.with_shell(
 -- {{{ Variable definitions
 
 local themes = {
+    "blackburn",       -- 1
+    "copland",         -- 2
+    "dremora",         -- 3
+    "holo",            -- 4
+    "multicolor",      -- 5
+    "powerarrow",      -- 6
     "powerarrow-dark", -- 7
+    "rainbow",         -- 8
+    "steamburn",       -- 9
+    "vertex"           -- 10
 }
 
 local chosen_theme = themes[7]
@@ -93,7 +102,7 @@ local editor       = os.getenv("EDITOR") or "nvim"
 local browser      = "none"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "inets", "terms", "files", "texts", "other" }
+awful.util.tagnames = { "", "", "", "", "" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -515,7 +524,7 @@ globalkeys = mytable.join(
     -- check https://github.com/DaveDavenport/rofi for more details
     -- rofi
     awful.key({ modkey }, "d", function ()
-            os.execute(string.format("rofi -combi-modi window,drun,ssh -theme gruvbox-dark-hard -font 'hack 10' -show combi",
+		os.execute(string.format("rofi -combi-modi window,drun,ssh -theme gruvbox-dark-hard -font 'hack 10' -show combi",
             'run', 'dmenu'))
         end,
         {description = "show rofi", group = "launcher"}),
@@ -785,15 +794,16 @@ end)
 os.execute("xrandr --output eDP1 --primary --mode 1366x768 --pos 0x1152 --rotate normal --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 1366x0 --rotate right --output VIRTUAL1 --off")
 os.execute("xrdb -load /home/user/.Xresources")
 awful.spawn("nm-applet &")
-awful.spawn("blueman-applet")
+-- awful.spawn("blueman-applet")
 os.execute("flameshot &")
--- awful.spawn("gxkb")
-os.execute("setxkbmap 'us,ru' &")
+awful.util.spawn("setxkbmap us,ru")
 awful.spawn("picom")
--- awful.spawn("volumeicon")
--- os.execute("killall conky")
--- awful.util.spawn("conky")
+awful.util.spawn("killall conky")
+awful.util.spawn("conky -c /usr/share/conky/conky_maia")
+awful.util.spawn("conky -c /usr/share/conky/conky1.10_shortcuts_maia")
+awful.util.spawn("conky -c /usr/share/conky/conky1.10_shortcuts_maia_up")
 os.execute("feh --bg-max /home/user/Pictures/dark.png")
+os.execute("udiskie &")
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
