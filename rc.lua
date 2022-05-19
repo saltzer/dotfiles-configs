@@ -524,7 +524,7 @@ globalkeys = mytable.join(
     -- check https://github.com/DaveDavenport/rofi for more details
     -- rofi
     awful.key({ modkey }, "d", function ()
-		os.execute(string.format("rofi -combi-modi window,drun,ssh -theme gruvbox-dark-hard -font 'hack 10' -show combi",
+		os.execute(string.format("rofi -combi-modi window,drun,ssh -theme solarized_alternate -font 'hack 10' -show combi",
             'run', 'dmenu'))
         end,
         {description = "show rofi", group = "launcher"}),
@@ -713,7 +713,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -799,10 +799,8 @@ os.execute("flameshot &")
 awful.util.spawn("setxkbmap us,ru")
 awful.spawn("picom")
 awful.util.spawn("killall conky")
-awful.util.spawn("conky -c /usr/share/conky/conky_maia")
-awful.util.spawn("conky -c /usr/share/conky/conky1.10_shortcuts_maia")
-awful.util.spawn("conky -c /usr/share/conky/conky1.10_shortcuts_maia_up")
-os.execute("feh --bg-max /home/user/Pictures/dark.png")
+awful.util.spawn("conky")
+os.execute("feh --bg-fill /home/user/Pictures/minimalist-winter.jpg")
 os.execute("udiskie &")
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
