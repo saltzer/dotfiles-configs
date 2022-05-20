@@ -181,10 +181,23 @@ local myawesomemenu = {
    { "Quit", function() awesome.quit() end },
 }
 
+favorite = {
+   { "Firefox", "firefox" },
+   { "Telegram", "telegram-desktop" },
+   { "Myuzi", "myuzi" },
+   { "Arandr", "arandr" },
+   { "Extraterm", "extraterm" },
+   { "Neovim", "kitty nvim" },
+   { "Xkill", "xkill" },
+   { "---------", ""},
+   { "Shutdown", "shutdown" },
+   { "Reboot", "reboot" },
+}
+
 awful.util.mymainmenu = freedesktop.menu.build {
     before = {
+	{ "Favorite", favorite, beautiful.awesome_icon },
         { "Awesome", myawesomemenu, beautiful.awesome_icon },
-        -- other triads can be put here
     },
     after = {
         { "Open terminal", terminal },
@@ -800,7 +813,7 @@ awful.util.spawn("setxkbmap us,ru")
 awful.spawn("picom")
 awful.util.spawn("killall conky")
 awful.util.spawn("conky")
-os.execute("feh --bg-fill /home/user/Pictures/minimalist-winter.jpg")
+os.execute("feh --bg-fill /home/user/Pictures/snow.png")
 os.execute("udiskie &")
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
