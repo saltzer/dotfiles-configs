@@ -18,17 +18,17 @@ local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-dark"
 -- theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "Terminus 9"
-theme.fg_normal                                 = "#ddffe6"
-theme.fg_focus                                  = "#03ff39"
-theme.fg_urgent                                 = "#93ccbb"
-theme.bg_normal                                 = "#1A1A1A"
-theme.bg_focus                                  = "#313131"
-theme.bg_urgent                                 = "#1A1A1A"
+theme.fg_normal                                 = "#7fafd8"
+theme.fg_focus                                  = "#7fafd8"
+theme.fg_urgent                                 = "#7fafd8"
+theme.bg_normal                                 = "#0f1f38"
+theme.bg_focus                                  = "#263f68"
+theme.bg_urgent                                 = "#0f1f38"
 theme.border_width                              = dpi(0)
-theme.border_normal                             = "#3F3F3F"
-theme.border_focus                              = "#7F7F7F"
-theme.border_marked                             = "#93ccb2"
-theme.tasklist_bg_focus                         = "#1A1A1A"
+theme.border_normal                             = "#0f1f38"
+theme.border_focus                              = "#0f1f38"
+theme.border_marked                             = "#0f1f38"
+theme.tasklist_bg_focus                         = "#0f1f38"
 theme.titlebar_bg_focus                         = theme.bg_focus
 theme.titlebar_bg_normal                        = theme.bg_normal
 theme.titlebar_fg_focus                         = theme.fg_focus
@@ -259,9 +259,9 @@ local neticon = wibox.widget.imagebox(theme.widget_net)
 local net = lain.widget.net({
     settings = function()
         widget:set_markup(markup.font(theme.font,
-                          markup("#03ff39", " " .. string.format("%06.1f", net_now.received))
+                          markup("#8ec4f2", " " .. string.format("%06.1f", net_now.received))
                           .. " " ..
-                          markup("#05fff7", " " .. string.format("%06.1f", net_now.sent) .. " ")))
+                          markup("#8ec4f2", " " .. string.format("%06.1f", net_now.sent) .. " ")))
     end
 })
 
