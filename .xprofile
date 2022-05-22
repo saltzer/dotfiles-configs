@@ -1,0 +1,10 @@
+xrandr --output eDP1 --primary --mode 1366x768 --pos 0x1152 --rotate normal --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 1366x0 --rotate right --output VIRTUAL1 --off
+xrdb -load ~/.Xresources
+picom &
+feh --bg-fill ~/Pictures/snow.png 
+conky -d &
+nm-applet &
+blueman-applet &
+udiskie &
+flameshot &
+setxkbmap us,ru &
