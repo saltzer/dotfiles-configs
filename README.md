@@ -1,3 +1,5 @@
+![](Pictures/snow.png)
+
 ### Dependencies
 
 #### Pacman 
@@ -22,6 +24,7 @@
 - alacritty 
 - fish 
 - pcmanfm
+- xsel
 
 #### AUR
 
