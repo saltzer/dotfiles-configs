@@ -1,4 +1,4 @@
-![](Pictures/snow.png)
+![](Pictures/exmpl.png)
 
 ### Dependencies
 
