@@ -8,6 +8,7 @@ set softtabstop=4
 set mouse=a
 set encoding=UTF-8
 set completeopt-=preview
+set clipboard=unnamedplus	"For clipboard support, also need xsel package
 
 let g:airline_theme='murmur'
 
