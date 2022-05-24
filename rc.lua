@@ -1,3 +1,4 @@
+-- .config/awesome/rc.lua
 -- {{{ Required libraries
 
 -- If LuaRocks is installed, make sure that packages installed through it are
@@ -456,7 +457,7 @@ globalkeys = mytable.join(
     awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
               {description = "-10%", group = "hotkeys"}),
 
-    -- ALSA volume control
+    -- ALSA volume control, if dont work - 'amixer -D pulse set Master toggle'
     awful.key({ modkey }, "]",
         function ()
             os.execute("pactl -- set-sink-volume 0 +10%", beautiful.volume.channel)
