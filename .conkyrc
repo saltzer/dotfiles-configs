@@ -59,7 +59,7 @@ conky.text = [[
  ${downspeedgraph eno1 5,90} ↓
  ${battery_bar 5,90 BAT1} %
 
- ${execi 60 wget -O - -q icanhazip.com} 
+ ${exec curl ifconfig.me} 
 
  ${top name 1} ${top cpu 1}%
  ${top name 2} ${top cpu 2}%
@@ -70,7 +70,7 @@ conky.text = [[
  ${color2}${top_mem name 1} ${top_mem mem_res 1}
  ${top_mem name 2} ${top_mem mem_res 2}
  ${top_mem name 3} ${top_mem mem_res 3}
-
+ 
  ${tcp_portmon 1 65535 rip  1}:${tcp_portmon 1 65535 rport  1}
  ${tcp_portmon 2 65535 rip  2}:${tcp_portmon 2 65535 rport  2} 
  ${tcp_portmon 3 65535 rip  3}:${tcp_portmon 3 65535 rport  3}
@@ -84,14 +84,14 @@ conky.text = [[
 
  IPMI errors:${color}
 
- ${#e06767}${exec ipmitool -I lanplus -H 192.168.0.19 -U ADMIN -P PASSWORD sdr | grep 'fail\|error'}${color}
+ ${#e06767}${exec ipmitool -I lanplus -H 192.168.0.99 -U ADMIN -P PASSWORD sdr | grep 'fail\|error'}${color}
 
 
- ${color2}${rss https://hnrss.org/newest?q=Arch+OR+Linux 30 item_title 0}
- ${rss https://hnrss.org/newest?q=Arch+OR+Linux 30 item_title 1}
- ${rss https://hnrss.org/newest?q=Torvalds+OR+Stallman 30 item_title 0}
- ${rss https://hnrss.org/newest?q=Torvalds+OR+Stallman 30 item_title 1}
- ${rss https://hnrss.org/newest?q=Russia+OR+Hacker 30 item_title 0}
- ${rss https://hnrss.org/newest?q=Russia+OR+Hacker 30 item_title 1}
- ${rss https://hnrss.org/newest?q=Golang+OR+Rust+OR+Python 30 item_title 0}
+
+ ${color2}${rss http://news.ycombinator.com/rss 30 item_title 1}
+ ${rss http://news.ycombinator.com/rss 30 item_title 2}
+ ${rss http://news.ycombinator.com/rss 30 item_title 3}
+ ${rss http://news.ycombinator.com/rss 30 item_title 4}
+ ${rss http://news.ycombinator.com/rss 30 item_title 5}
+ ${rss http://news.ycombinator.com/rss 30 item_title 6}${color}
 ]];
