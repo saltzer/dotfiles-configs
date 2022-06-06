@@ -32,10 +32,8 @@ conky.config = {
 	net_avg_samples = 1,
 	override_utf8_locale = true,
 	use_spacer = 'right',
-	maximum_width = 1365,
-	maximum_height = 1350,
-    minimum_width = 1365,
-    minimum_height = 1350,
+	minimum_width = 1365,
+	minimum_height = 1350,
 	uppercase = false,
 	default_color = '#0f1f38',
 	color1 = '#0f1f38',
@@ -84,7 +82,7 @@ conky.text = [[
 
  IPMI errors:${color}
 
- ${#e06767}${exec ipmitool -I lanplus -H 192.168.0.99 -U ADMIN -P PASSWORD sdr | grep 'fail\|error'}${color}
+ ${#e06767}${exec ipmitool -I lanplus -H 192.168.0.19 -U ADMIN -P Saltz0rootHack sdr | grep 'fail\|error'}${color}
 
 
 

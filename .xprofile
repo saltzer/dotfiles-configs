@@ -5,6 +5,7 @@ feh --bg-fill ~/Pictures/snow.png
 conky -d &
 nm-applet &
 blueman-applet &
+pnmixer &
 udiskie &
 flameshot &
 setxkbmap us,ru &

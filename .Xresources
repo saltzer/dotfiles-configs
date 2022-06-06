@@ -1,2 +1,37 @@
 Xcursor.theme: Adwaita
 Xcursor.size: 3
+
+URxvt.scrollBar: false
+URxvt*font: xft:DejaVu Sans Mono:size=9
+
+URxvt.perl-ext-common: ...,tabbed,...
+
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+URxvt.keysym.Control-Up:    033[1;5A
+URxvt.keysym.Control-Down:  033[1;5B
+URxvt.keysym.Control-Left:  033[1;5D
+URxvt.keysym.Control-Right: 033[1;5C
+
+URxvt*background: black
+URxvt*foreground: white
+URxvt*color0: black
+URxvt*color1: red3
+URxvt*color2: green3
+URxvt*color3: yellow3
+URxvt*color4: blue2
+URxvt*color5: magenta3
+URxvt*color6: cyan3
+URxvt*color7: gray90
+URxvt*color8: grey50
+URxvt*color9: red
+URxvt*color10: green
+URxvt*color11: yellow
+URxvt*color12: blue
+URxvt*color13: magenta
+URxvt*color14: cyan
+URxvt*color15: white

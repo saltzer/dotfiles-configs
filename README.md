@@ -17,7 +17,6 @@
 - ttf-font-awesome
 - xrandr 
 - arandr 
-- volumeicon
 - picom
 - feh
 - kitty
@@ -25,8 +24,10 @@
 - fish 
 - pcmanfm
 - xsel
+- pavucontrol
 
 #### AUR
 
 - extraterm
 - hyper
+- pnmixer
