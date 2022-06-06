@@ -82,7 +82,7 @@ conky.text = [[
 
  IPMI errors:${color}
 
- ${#e06767}${exec ipmitool -I lanplus -H 192.168.0.19 -U ADMIN -P Saltz0rootHack sdr | grep 'fail\|error'}${color}
+ ${#e06767}${exec ipmitool -I lanplus -H 192.168.0.19 -U ADMIN -P PASSWORD sdr | grep 'fail\|error'}${color}
 
 
 
