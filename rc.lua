@@ -1,4 +1,3 @@
--- .config/awesome/rc.lua
 -- {{{ Required libraries
 
 -- If LuaRocks is installed, make sure that packages installed through it are
@@ -183,7 +182,7 @@ local myawesomemenu = {
 }
 
 favorite = {
-   { "Firefox", "firefox" },
+   { "Firefox", "firefox  --new-tab" },
    { "Telegram", "telegram-desktop" },
    { "Myuzi", "myuzi" },
    { "Arandr", "arandr" },
@@ -595,7 +594,8 @@ clientkeys = mytable.join(
         {description = "(un)maximize", group = "client"}),
     awful.key({ modkey, "Control" }, "m",
         function (c)
-            c.maximized_vertical = not c.maximized_vertical
+	    c.maximized_horizontal = not c.maximized_horizontal
+            c.maximized_vertical   = not c.maximized_vertical
             c:raise()
         end ,
         {description = "(un)maximize vertically", group = "client"}),
