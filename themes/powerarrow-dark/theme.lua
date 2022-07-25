@@ -1,10 +1,3 @@
---[[
-
-     Powerarrow Dark Awesome WM theme
-     github.com/lcpz
-
---]]
-
 local gears = require("gears")
 local lain  = require("lain")
 local awful = require("awful")
@@ -102,6 +95,14 @@ local clock = awful.widget.watch(
     end
 )
 
+-- Binary clock
+local binclock = require("themes.powerarrow.binclock"){
+    height = dpi(18),
+    show_seconds = true,
+    color_active = theme.fg_normal,
+    color_inactive = theme.bg_focus
+}
+
 -- Calendar
 theme.cal = lain.widget.cal({
     attach_to = { clock },
@@ -168,6 +169,7 @@ theme.mpd = lain.widget.mpd({
         widget:set_markup(markup.font(theme.font, markup("#EA6F81", artist) .. title))
     end
 })
+
 
 -- MEM
 local memicon = wibox.widget.imagebox(theme.widget_mem)
@@ -350,10 +352,15 @@ function theme.at_screen_connect(s)
             wibox.container.background(net.widget, theme.bg_focus),
             arrl_dl,
             clock,
+	    spr,
+	    arrl_ld,
+	    arrl_dl,
+	    spr,
+	    binclock.widget,
             spr,
             arrl_ld,
-            wibox.container.background(s.mylayoutbox, theme.bg_focus),
-        },
+            wibox.container.background(s.mylayoutbox, theme.bg_focus)
+    },
     }
 end
 

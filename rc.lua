@@ -184,9 +184,9 @@ local myawesomemenu = {
 favorite = {
    { "Firefox", "firefox  --new-tab" },
    { "Telegram", "telegram-desktop" },
-   { "Myuzi", "myuzi" },
-   { "Arandr", "arandr" },
    { "Extraterm", "extraterm" },
+   { "Horizon", "vmware-view" },
+   { "Arandr", "arandr" },
    { "Mousepad", "mousepad" },
    { "Neovim", "kitty nvim" },
    { "Xkill", "xkill" },
@@ -806,18 +806,6 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = vi_focus})
 end)
 
-
--- os.execute("xrandr --output eDP1 --primary --mode 1366x768 --pos 0x1152 --rotate normal --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 1366x0 --rotate right --output VIRTUAL1 --off")
--- os.execute("xrdb -load ~/.Xresources")
--- awful.util.spawn("killall conky")
--- awful.util.spawn("conky -d")
--- awful.spawn("nm-applet &")
--- awful.spawn("blueman-applet")
--- os.execute("flameshot &")
--- awful.util.spawn("setxkbmap us,ru")
--- awful.spawn("picom")
--- os.execute("feh --bg-fill ~/Pictures/snow.png")
--- os.execute("udiskie &")
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
