@@ -1,5 +1,8 @@
 ![](Pictures/exmpl.png)
 
+*dark
+![](Pictures/exmpl_dark.png)
+
 ### Dependencies
 
 #### Pacman 

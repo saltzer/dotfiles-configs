@@ -1,0 +1,95 @@
+conky.config = { 
+
+	background = true,
+	use_xft = true,
+	font = 'Monospace:bold:pixelsize=13',
+	xftalpha = 0.8,
+	update_interval = 1.0,
+	total_run_times = 0,
+	own_window = true,
+	own_window_transparent = true,
+	own_window_type = 'desktop',
+	own_window_class = 'conky',
+	own_window_argb_visual = true,
+	--own_window_colour = '#263041',
+	--own_window_argb_value = 120,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	stippled_borders = 0,
+	border_width = 0,
+	default_color = '#999999',
+	default_shade_color = 'gray',
+	default_outline_color = 'black',
+	alignment = 'top_right',
+	gap_x = 0,
+	gap_y = 45,
+	no_buffers = true,
+	cpu_avg_samples = 1,
+	net_avg_samples = 1,
+	override_utf8_locale = true,
+	use_spacer = 'right',
+	minimum_width = 1365,
+	minimum_height = 1350,
+	uppercase = false,
+	default_color = '#948c87',
+	color1 = '#948c87',
+	color2 = '#948c87'
+
+};
+
+conky.text = [[
+ ${font Bitstream Vera Sans:size=16}${time %A}$font\
+ ${font Bitstream Vera Sans:size=38}${time %e}$font
+ ${voffset -30}${font Bitstream Vera Sans:size=18}${time %b}$font\
+
+ ──────────────────────
+
+ ${exec who}
+
+ ${uptime}
+
+ ${fs_bar 5,90 /} /
+ ${upspeedgraph eno1 5,90} ↑
+ ${downspeedgraph eno1 5,90} ↓
+ ${battery_bar 5,90 BAT1} %
+
+ ${exec curl ifconfig.me} 
+
+ ${top name 1} ${top cpu 1}%
+ ${top name 2} ${top cpu 2}%
+ ${top name 3} ${top cpu 3}%
+
+
+
+ ${color2}${top_mem name 1} ${top_mem mem_res 1}
+ ${top_mem name 2} ${top_mem mem_res 2}
+ ${top_mem name 3} ${top_mem mem_res 3}
+ 
+ ${tcp_portmon 1 65535 rip  1}:${tcp_portmon 1 65535 rport  1}
+ ${tcp_portmon 2 65535 rip  2}:${tcp_portmon 2 65535 rport  2} 
+ ${tcp_portmon 3 65535 rip  3}:${tcp_portmon 3 65535 rport  3}
+ ${tcp_portmon 4 65535 rip  4}:${tcp_portmon 4 65535 rport  4}
+ ${tcp_portmon 5 65535 rip  5}:${tcp_portmon 5 65535 rport  5} 
+ ${tcp_portmon 5 65535 rip  6}:${tcp_portmon 5 65535 rport  6}
+ ${tcp_portmon 5 65535 rip  7}:${tcp_portmon 5 65535 rport  7}
+ ${tcp_portmon 5 65535 rip  8}:${tcp_portmon 5 65535 rport  8}
+ ${tcp_portmon 5 65535 rip  9}:${tcp_portmon 5 65535 rport  9}
+ ${tcp_portmon 5 65535 rip  10}:${tcp_portmon 5 65535 rport  10}
+
+ IPMI errors:${color}
+
+ ${#e06767}${exec ipmitool -I lanplus -H 192.168.0.100 -U ADMIN -P PASSWORD sdr | grep 'fail\|error'}${color}
+
+
+
+ ${color2}${rss http://news.ycombinator.com/rss 30 item_title 1}
+ ${rss http://news.ycombinator.com/rss 30 item_title 2}
+ ${rss http://news.ycombinator.com/rss 30 item_title 3}
+ ${rss http://news.ycombinator.com/rss 30 item_title 4}
+ ${rss http://news.ycombinator.com/rss 30 item_title 5}
+ ${rss http://news.ycombinator.com/rss 30 item_title 6}${color}
+]];
