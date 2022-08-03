@@ -1,6 +1,6 @@
 ![](Pictures/exmpl.png)
 
-*dark
+#### *dark
 ![](Pictures/exmpl_dark.png)
 
 ### Dependencies
