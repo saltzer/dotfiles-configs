@@ -4,6 +4,9 @@
 #### *dark
 ![](Pictures/exmpl_dark.png)
 
+#### *nordic
+![](Pictures/exmpl_nordic.png)
+
 ### Dependencies
 
 #### Pacman 
