@@ -11,17 +11,17 @@ local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-dark"
 -- theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "Terminus 9"
-theme.fg_normal                                 = "#7b818d" --all_text
-theme.fg_focus                                  = "#7b818d" --focus_text_left 
-theme.fg_urgent                                 = "#939bab" --none
-theme.bg_normal                                 = "#2b2f38" --main_bg
-theme.bg_focus                                  = "#343b47" --focus_figure
-theme.bg_urgent                                 = "#4b515d" --none
+theme.fg_normal                                 = "#486986" --all_text
+theme.fg_focus                                  = "#486986" --focus_text_left 
+theme.fg_urgent                                 = "#052530" --none
+theme.bg_normal                                 = "#052530" --main_bg
+theme.bg_focus                                  = "#293f4d" --focus_figure
+theme.bg_urgent                                 = "#052530" --none
 theme.border_width                              = dpi(0)
-theme.border_normal                             = "#2b2f38"
-theme.border_focus                              = "#2b2f38"
-theme.border_marked                             = "#2b2f38"
-theme.tasklist_bg_focus                         = "#2b2f38"
+theme.border_normal                             = "#052530"
+theme.border_focus                              = "#052530" --focus_layer
+theme.border_marked                             = "#052530"
+theme.tasklist_bg_focus                         = "#052530"
 theme.titlebar_bg_focus                         = theme.bg_focus
 theme.titlebar_bg_normal                        = theme.bg_normal
 theme.titlebar_fg_focus                         = theme.fg_focus
@@ -166,7 +166,7 @@ theme.mpd = lain.widget.mpd({
             mpdicon:set_image(theme.widget_music)
         end
 
-        widget:set_markup(markup.font(theme.font, markup("#EA6F81", artist) .. title))
+        widget:set_markup(markup.font(theme.font, markup("#052530", artist) .. title))
     end
 })
 
@@ -261,9 +261,9 @@ local neticon = wibox.widget.imagebox(theme.widget_net)
 local net = lain.widget.net({
     settings = function()
         widget:set_markup(markup.font(theme.font,
-                          markup("#7c888f", " " .. string.format("%06.1f", net_now.received))
+                          markup("#486986", " " .. string.format("%06.1f", net_now.received))
                           .. " " ..
-                          markup("#7c888f", " " .. string.format("%06.1f", net_now.sent) .. " ")))
+                          markup("#486986", " " .. string.format("%06.1f", net_now.sent) .. " ")))
     end
 })
 

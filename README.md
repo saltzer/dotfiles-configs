@@ -7,6 +7,9 @@
 #### *nordic
 ![](Pictures/exmpl_nordic.png)
 
+### *needles
+![](Pictures/exmpl_needles.png)
+
 ### Dependencies
 
 #### Pacman 
