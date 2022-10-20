@@ -102,7 +102,7 @@ local editor       = os.getenv("EDITOR") or "nvim"
 local browser      = "none"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "", "", "", "", "" }
+awful.util.tagnames = { "ᚱ", "ᛉ", "ᛝ", "ᛈ", "ᛏ" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -396,8 +396,8 @@ globalkeys = mytable.join(
     -- Dynamic tagging
     awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag() end,
               {description = "add new tag", group = "tag"}),
-    awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end,
-              {description = "rename tag", group = "tag"}),
+    -- awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end,
+    --          {description = "rename tag", group = "tag"}),
     awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(-1) end,
               {description = "move tag to the left", group = "tag"}),
     awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(1) end,
@@ -527,6 +527,27 @@ globalkeys = mytable.join(
               {description = "show the menubar", group = "launcher"}),
 
     --]]
+
+    -- lang settings
+    awful.key({ "Shift" }, "space", function ()
+            os.execute("setxkbmap -query | grep us && setxkbmap ru || setxkbmap us")
+        end,
+        {description = "lang", group = "launcher"}),
+    --]]
+
+    -- screen 
+    awful.key({ "Shift", modkey }, "-", function ()
+            os.execute("xrandr --output eDP1 --primary --mode 1366x768 --pos 0x1152 --rotate normal --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 0x72 --rotate normal --output VIRTUAL1 --off")
+        end,
+        {description = "screen", group = "launcher"}),
+    --]]
+
+    awful.key({ "Shift", modkey }, "=", function ()
+            os.execute("xrandr --output eDP1 --primary --mode 1366x768 --pos 0x1152 --rotate normal --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 1366x0 --rotate right --output VIRTUAL1 --off")
+        end,
+        {description = "screen", group = "launcher"}),
+    --]]
+
     -- dmenu
     awful.key({ modkey }, "p", function ()
             os.execute(string.format("dmenu_run -i -fn 'Monospace'",
@@ -538,7 +559,7 @@ globalkeys = mytable.join(
     -- check https://github.com/DaveDavenport/rofi for more details
     -- rofi
     awful.key({ modkey }, "d", function ()
-		os.execute(string.format("rofi -combi-modi window,drun,ssh -theme solarized_alternate -font 'hack 10' -show combi",
+		os.execute(string.format("rofi -combi-modi window,drun,ssh -theme android_notification -font 'hack 10' -show combi",
             'run', 'dmenu'))
         end,
         {description = "show rofi", group = "launcher"}),
